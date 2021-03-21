@@ -41,6 +41,7 @@ window.setup = function () {
 
 window.draw = function () {
   clear();
+  // paths.background(0, 2);
 
   image(paths, 0, 0);
 

@@ -65,7 +65,7 @@ export class Bird {
     pop();
 
     this.paths.noStroke();
-    this.paths.fill(0, 10);
+    this.paths.fill(255, 10);
     this.paths.ellipse(this.position.x, this.position.y, 2, 2);
   }
 }
