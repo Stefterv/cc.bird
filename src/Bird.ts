@@ -5,7 +5,8 @@ const SPEED = 0.5;
 export class Bird {
   parent: Bird;
 
-  angle: number;
+  angle: number = 0;
+  angleSmooth: number = 0;
   position: Vector;
   velocity: Vector;
 
@@ -51,11 +52,20 @@ export class Bird {
   }
 
   draw() {
-    fill(255);
-    ellipse(this.position.x, this.position.y, 5, 5);
+    this.angleSmooth += (this.angle - this.angleSmooth) * 0.1;
+    stroke(0);
+    // ellipse(this.position.x, this.position.y, 5, 5);
+    // line(0,)
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(this.angleSmooth);
+    line(0, 0, -10, -5);
+    line(0, 0, -10, 5);
+
+    pop();
 
     this.paths.noStroke();
-    this.paths.fill(255, 10);
+    this.paths.fill(0, 10);
     this.paths.ellipse(this.position.x, this.position.y, 2, 2);
   }
 }
