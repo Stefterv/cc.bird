@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es2015",
+    "downlevelIteration": true,
+    "jsx": "react",
+    "allowJs": true,
+
+    "noImplicitThis": false
+  },
+  "include": ["src/*"]
+}
