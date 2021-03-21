@@ -41,9 +41,13 @@ window.setup = function () {
 
 window.draw = function () {
   clear();
-  // paths.background(0, 2);
 
   image(paths, 0, 0);
+  if (frameCount % 500 == 0) {
+    paths.filter(DILATE, 1);
+    paths.filter(DILATE, 1);
+    paths.filter(BLUR, 1);
+  }
 
   for (let bird of birds) {
     bird.move();
